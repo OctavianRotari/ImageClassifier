@@ -35,7 +35,7 @@ def train(model, data_dir, device, learning_rate=0.001, hidden_units=1000, epoch
     train_datasets = datasets.ImageFolder(data_dir + '/train', transform=train_transforms)
     trainloader = torch.utils.data.DataLoader(train_datasets, batch_size=batch_size, shuffle=True)     
     test_datasets = datasets.ImageFolder(data_dir + '/test', transform=test_transforms)
-    testloader = torch.utils.data.DataLoader(train_datasets, batch_size=batch_size, shuffle=True)
+    testloader = torch.utils.data.DataLoader(test_datasets, batch_size=batch_size, shuffle=True)
                       
    
     model.classifier = nn.Sequential(nn.Linear(25088, hidden_units),
